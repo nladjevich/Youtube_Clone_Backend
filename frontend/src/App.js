@@ -6,6 +6,8 @@ import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import SearchBar from "./components/SearchBar";
+import Searched from "./pages/Searched";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -18,6 +20,7 @@ function App() {
   return (
     <div>
       <Navbar />
+      <SearchBar></SearchBar>
       <Routes>
         <Route
           path="/"
@@ -27,6 +30,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path='/searched/:search' element={<Searched/>}/>
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
